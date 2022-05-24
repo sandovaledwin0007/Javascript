@@ -1,0 +1,367 @@
+<html>
+<head>
+<title>Taller 2</title>
+<link rel="stylesheet" href="Script/CssJS.css" >
+<script>
+ 
+ function ExePalindromo(){
+	 
+		var Deletrear= document.getElementById("palabra").value;
+		var Rest = "";
+		
+		for (i = Deletrear.length-1; i >= 0; i--){
+			Rest = Rest+ Deletrear[i]
+		}
+		
+		if (Deletrear == Rest){
+		document.getElementById("Resultado").value = Rest + " La palabra es palindroma ";
+		document.getElementById("Resultado").style.color = "Green";
+		}else{
+		document.getElementById("Resultado").value = Rest + " NO es palindroma";
+		document.getElementById("Resultado").style.color = "red";
+		}
+}
+
+function NumeroMayor(){
+	
+	var Num1= document.getElementById("Numero1").value;
+	var Num2= document.getElementById("Numero2").value;
+	
+	if(Num1 > Num2 ){
+		window.alert("el numero "+ Num1 + " es mayor");
+		}else if(Num2 > Num1){
+			window.alert("el numero "+ Num2 + " es mayor");
+		}else if(Num2 = Num1){
+			window.alert("Lo numeros son iguales");
+		}else{
+				window.alert("error");
+			}
+	
+	}
+	
+function EjecutarVocales(){
+	
+
+var Frases = document.getElementById("FraseIngresada").value;
+var vrFra = Frases.length;
+var i; 
+var cont =0;  
+var cont1 =0;
+var cont2 =0;
+var cont3 =0;
+var cont4 =0;
+var cont5 =0;
+var cont6 =0;
+var cont6 =0;
+var cont7 =0;
+var cont8 =0;
+var cont9 =0;
+var cont10 =0;
+var cont11=0;
+var cont12 =0;
+var cont13 =0;
+var cont14 =0;
+var cont15 =0;
+for (i = 0; i < vrFra; i++) {
+	 
+if ((Frases.substr(i,1) === "a") ||Frases.substr(i,1) === "á" ||Frases.substr(i,1) === "A" || Frases.substr(i,1) === "e" || Frases.substr(i,1) === "é" || 
+		Frases.substr(i,1) === "E" || Frases.substr(i,1) === "i" ||Frases.substr(i,1) === "í" ||Frases.substr(i,1) === "I" || 
+		Frases.substr(i,1) === "o" ||Frases.substr(i,1) === "ó" ||Frases.substr(i,1) === "O" || Frases.substr(i,1) === "u"|| Frases.substr(i,1) === "ú"||
+		Frases.substr(i,1) === "U" ) 
+		{	window.alert((Frases.substr(i,1)));  
+		cont++;
+		if((Frases.substr(i,1) === "a")){
+			cont1++;
+			}
+		if((Frases.substr(i,1) === "á")){
+			cont2++;
+			}
+		if((Frases.substr(i,1) === "A")){
+			cont3++;
+			}
+			if((Frases.substr(i,1) === "e")){
+			cont4++;
+			}
+		if((Frases.substr(i,1) === "E")){
+			cont5++;
+			}
+		if((Frases.substr(i,1) === "é")){
+			cont6++;
+			}
+			if((Frases.substr(i,1) === "i")){
+			cont7++;
+			}
+		if((Frases.substr(i,1) === "I")){
+			cont8++;
+			}
+		if((Frases.substr(i,1) === "í")){
+			cont9++;
+			}
+			if((Frases.substr(i,1) === "o")){
+			cont10++;
+			}
+		if((Frases.substr(i,1) === "O")){
+			cont11++;
+			}
+		if((Frases.substr(i,1) === "ó")){
+			cont12++;
+			}
+			if((Frases.substr(i,1) === "u")){
+			cont13++;
+			}
+		if((Frases.substr(i,1) === "U")){
+			cont14++;
+			}
+		if((Frases.substr(i,1) === "ú")){
+			cont15++;
+			}
+		
+		
+		document.getElementById("Vocales").value = cont + " Total de vocales";
+		document.getElementById("a").value =cont1;
+		document.getElementById("aa").value =cont2;
+		document.getElementById("aaa").value =cont3;
+		document.getElementById("e").value =cont4;
+		document.getElementById("ee").value =cont5;
+		document.getElementById("eee").value =cont6;
+		document.getElementById("i").value =cont7;
+		document.getElementById("ii").value =cont8;
+		document.getElementById("iii").value =cont9;
+		document.getElementById("o").value =cont10;
+		document.getElementById("oo").value =cont11;
+		document.getElementById("ooo").value =cont12;
+		document.getElementById("u").value =cont13;
+		document.getElementById("uu").value =cont14;
+		document.getElementById("uuu").value =cont15;
+		
+		
+		}
+	}
+ 
+}	
+
+  String.prototype.transformaCaracteresEspeciales = function() {
+    return unescape(escape(this).
+                      replace(/%0A/g, '<br/>').
+                      replace(/%3C/g, '&lt;').
+                      replace(/%3E/g, '&gt;'));
+  }
+
+  var estadosPosibles = ['No inicializado', 'Cargando', 'Cargado', 'Interactivo', 'Completado'];
+  var tiempoInicial = 0;
+
+  window.onload = function() {
+    // Cargar en el input text la URL de la página
+    var recurso = document.getElementById('recurso');
+    recurso.value = location.href;
+
+    // Cargar el recurso solicitado cuando se pulse el botón MOSTRAR CONTENIDOS
+    document.getElementById('enviar').onclick = cargaContenido;
+  }
+
+  function cargaContenido() {
+    // Borrar datos anteriores
+    document.getElementById('contenidos').innerHTML = "";
+    document.getElementById('estados').innerHTML = "";
+
+    // Instanciar objeto XMLHttpRequest
+    if(window.XMLHttpRequest) {
+      peticion = new XMLHttpRequest();
+    }
+    else {
+      peticion = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    // Preparar función de respuesta
+    peticion.onreadystatechange = muestraContenido;
+
+    // Realizar petición
+    tiempoInicial = new Date();
+    var recurso = document.getElementById('recurso').value;
+    peticion.open('GET', recurso+'?nocache='+Math.random(), true);
+    peticion.send(null);
+  }
+
+  // Función de respuesta
+  function muestraContenido() {
+    var tiempoFinal = new Date();
+    var milisegundos = tiempoFinal - tiempoInicial;
+
+    var estados = document.getElementById('estados');
+    estados.innerHTML += "[" + milisegundos + " mseg.] " + estadosPosibles[peticion.readyState] + "<br/>";
+
+    if(peticion.readyState == 4) {
+      if(peticion.status == 200) {
+        var contenidos = document.getElementById('contenidos');
+        contenidos.innerHTML = peticion.responseText.transformaCaracteresEspeciales();
+      }
+      muestraCabeceras();
+      muestraCodigoEstado();
+    }
+  }
+
+  function muestraCabeceras() {
+    var cabeceras = document.getElementById('cabeceras');
+    cabeceras.innerHTML = peticion.getAllResponseHeaders().transformaCaracteresEspeciales();
+  }
+
+  function muestraCodigoEstado() {
+    var codigo = document.getElementById('codigo');
+    codigo.innerHTML = peticion.status + "<br/>" + peticion.statusText;
+  }
+
+</script>
+</head>
+<body>
+<header>
+<form action="#">
+  URL: <input type="text" id="recurso" size="70" />
+  <input type="button" id="enviar" value="Mostrar contenidos" />
+</form>
+ 
+ <h2>Web Taller 2</h2>
+  <h3>Ejercicios en Javascript</h3>
+</header>
+<section>
+  <h1> Ejercicio Palindromo </h1>
+  <div class="Palindros" align="center">
+ 
+    <label> Ingrese la palabra :</label>
+    <input type "Frases" id= "palabra">
+    <br>
+    <br>
+    <label> Resultado es  : </label>
+    <input type = "Frases" id = "Resultado" >
+    </b> <br>
+    <br>
+    <input type= "submit"  id="botonp" Onclick="ExePalindromo()" >
+    <br>
+  </div>
+</section>
+<section>
+  <h1> Numero Mayor </h1>
+  <div class="Numeros" align="center">
+    <label> Ingrese Numero 1 :</label>
+    <input type="number" id= "Numero1">
+    <br>
+    <br>
+    <label> Ingrese Numero 2 : </label>
+    <input type="number"  id = "Numero2" >
+    </b> <br>
+    <br>
+    <input type= "submit" id="botonp" onclick = "NumeroMayor()" >
+    <br>
+  </div>
+</section>
+<section>
+  <h1> Ingrese la frase - Ejercicio 3-4: </h1>
+  <div class="Frase" align="left">
+    <label> Ingrese Frase :</label>
+    <input type="Frases" id= "FraseIngresada">
+    <br>
+    <br>
+    <label>Cantidad de Vocales : </label>
+    <input type="Frases"  id = "Vocales" >
+    </b> <br>
+    <br>
+    <input type= "submit"  id="botonp" onclick = "EjecutarVocales()" >
+    <br><br>
+    <label>Cantidad a : </label>
+    <input type="Frases"  id = "a" >
+    </b> 
+    <br>
+       <br>
+    <label>Cantidad A : </label>
+    <input type="Frases"  id = "aaa" >
+    </b> 
+    <br>
+       <br>
+    <label>Cantidad á con tilde : </label>
+    <input type="Frases"  id = "aa" >
+    </b>  
+    <br>
+       <br>
+    <label>Cantidad e : </label>
+    <input type="Frases"  id = "e" >
+    </b>  
+    <br>
+       <br>
+    <label>Cantidad E : </label>
+    <input type="Frases"  id = "ee" >
+    </b> <br>
+    <br>
+       <br>
+    <label>Cantidad é con tilde : </label>
+    <input type="Frases"  id = "eee" >
+    </b> 
+    <br>
+       <br>
+    <label>Cantidad i : </label>
+    <input type="Frases"  id = "i" >
+    </b>  
+    <br>
+       <br>
+    <label>Cantidad I: </label>
+    <input type="Frases"  id = "ii" >
+    </b>  
+    <br>
+       <br>
+    <label>Cantidad í con tilde : </label>
+    <input type="Frases"  id = "iii" >
+    </b>  
+    <br>
+       <br>
+    <label>Cantidad o : </label>
+    <input type="Frases"  id = "o" >
+    </b>  
+    <br>
+       <br>
+    <label>Cantidad O : </label>
+    <input type="Frases"  id = "oo" >
+    </b>  
+    <br>
+       <br>
+    <label>Cantidad ó contilde : </label>
+    <input type="Frases"  id = "ooo" >
+    </b>  
+    <br>
+       <br>
+    <label>Cantidad u : </label>
+    <input type="Frases"  id = "u" >
+    </b> 
+    <br>
+       <br>
+    <label>Cantidad U : </label>
+    <input type="Frases"  id = "uu" >
+    </b> 
+    <br>
+       <br>
+    <label>Cantidad ú con tilde : </label>
+    <input type="Frases"  id = "uuu" >
+    </b>  
+    <br>
+        
+    
+  
+  </div>
+</section>
+<section>
+
+<div id="principal">
+  <h2>Contenidos del archivo:</h2>
+  <div id="contenidos"></div>
+
+  <h2>Cabeceras HTTP de la respuesta del servidor:</h2>
+  <div id="cabeceras"></div>
+</div>
+
+<div id="secundario">
+  <h2>Estados de la petición:</h2>
+  <div id="estados"></div>
+
+  <h2>Código de estado:</h2>
+  <div id="codigo"></div>
+</div>
+ </section>
+</body>
+</html>

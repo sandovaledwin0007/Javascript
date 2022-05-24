@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+
+header {
+	background-color: #E6ECEE;
+	color: #787878;
+	width: 95%;
+	margin: 1%;
+	padding: 20px;
+	font-size: 20px;
+	text-align: center;
+	border: 1px solid #666;
+	border-radius:5px;
+}
+
+section {
+	background-color: #FFF;
+	color: #787878;
+	width: 95%;
+	margin: 1%;
+	padding: 20px;
+	font-size: 20px;
+	text-align: center;
+	border: 1px solid #666;
+	border-radius:5px;
+}
+
+
+
+h1 {
+	text-align: center;
+	padding: 15px;
+	background-color: #999;
+	color: white;
+	width: 93%;
+	margin: 1%;
+	border: 3px solid #666;
+}
+.Palindros {
+	margin: 1%;
+	width: 93%;
+	border: 3px solid gray;
+	border-radius: 5px;
+	padding: 15px;
+	background-color: #E6ECEE;
+}
+#Resultado {
+	width: 30%;
+	border: 3px solid #F2B3CF;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#palabra {
+	width: 30%;
+	border: 3px solid #8DF5AF;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#botonp{
+	width: 30%;
+	height:5%;
+	}
+	
+.Numeros {
+	margin: 1%;
+	width: 93%;
+	border: 3px solid gray;
+	border-radius: 5px;
+	padding: 15px;
+	background-color: #E6ECEE;
+}
+
+#Numero1 {
+	width: 30%;
+	border: 3px solid #F2B3CF;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+#Numero2 {
+	width: 30%;
+	border: 3px solid #8DF5AF;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+
+.Frase {
+	margin: 1%;
+	width: 93%;
+	border: 3px solid gray;
+	border-radius: 5px;
+	padding: 15px;
+	background-color: #FFF;
+}
+
+#FraseIngresada {
+	width: 30%;
+	border: 3px solid #DD4A68;
+	border-radius: 5px;
+	padding: 10px;
+}
+ 
+ 
+#principal {
+	width: auto;
+	height: 85px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 1px;
+}
+
+ 
+
+
+#cabeceras {
+	width: auto;
+	height: 85px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 1px;
+}
+
+
+ 
+#estados {
+	width: auto;
+	height: 85px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 1px;
+}
+
+ 
+
+#codigo{
+	width: auto;
+	height: 85px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 1px;
+}
+
+ 
